@@ -1,25 +1,141 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zB7-Qg-G9q">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cute-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Simple_Puppies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="puppy1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-4Y-amT">
+                                <rect key="frame" x="230" y="232" width="130" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="8yh-RF-z8u"/>
+                                    <constraint firstAttribute="height" constant="135" id="zpw-MK-ysg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sL-l4-NxJ">
+                                <rect key="frame" x="272" y="413" width="46" height="30"/>
+                                <state key="normal" title="Toggle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapToggleButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8NM-tY-His"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="puppy1.jpg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVI-la-8Jm">
+                                <rect key="frame" x="272" y="178" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1u9-4Y-amT" secondAttribute="centerX" id="6XY-yT-WNN"/>
+                            <constraint firstAttribute="centerY" secondItem="1u9-4Y-amT" secondAttribute="centerY" id="VUf-2H-V0s"/>
+                            <constraint firstAttribute="centerX" secondItem="KVI-la-8Jm" secondAttribute="centerX" id="dEy-x9-n84"/>
+                            <constraint firstAttribute="centerX" secondItem="8sL-l4-NxJ" secondAttribute="centerX" constant="5" id="kCn-dZ-cIt"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Cute" id="v8f-ns-KyU"/>
+                    <navigationItem key="navigationItem" id="oyY-Fb-A81"/>
+                    <connections>
+                        <outlet property="imageView" destination="1u9-4Y-amT" id="9Iy-qm-FJO"/>
+                        <outlet property="puppyLabel" destination="KVI-la-8Jm" id="kWU-eh-z5C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21" y="-1116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="awQ-f3-bQk">
+            <objects>
+                <navigationController id="zB7-Qg-G9q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7M-eK-vA7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rhl-pF-RLy" kind="relationship" relationship="rootViewController" id="yTP-oS-SLS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1m-76-iKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1733" y="-1123"/>
+        </scene>
+        <!--Index View Controller-->
+        <scene sceneID="ilg-q4-9D3">
+            <objects>
+                <viewController id="rhl-pF-RLy" customClass="IndexViewController" customModule="Simple_Puppies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RUf-Fj-m1b"/>
+                        <viewControllerLayoutGuide type="bottom" id="E8p-x2-eaq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZIL-om-Dma">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Gl6-9K-tJc">
+                                <rect key="frame" x="75" y="46" width="450" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" textLabel="tsf-4d-MEr" style="IBUITableViewCellStyleDefault" id="64p-oF-VSh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="64p-oF-VSh" id="OLv-Q9-bLb">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tsf-4d-MEr">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" identifier="showView" id="Ob4-60-acF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rhl-pF-RLy" id="eUO-90-lqc"/>
+                                    <outlet property="delegate" destination="rhl-pF-RLy" id="tYY-U8-NDQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Gl6-9K-tJc" secondAttribute="centerY" constant="27" id="GeV-1y-3yc"/>
+                            <constraint firstItem="E8p-x2-eaq" firstAttribute="top" secondItem="Gl6-9K-tJc" secondAttribute="bottom" constant="100" id="KUj-DN-WqZ"/>
+                            <constraint firstItem="Gl6-9K-tJc" firstAttribute="leading" secondItem="ZIL-om-Dma" secondAttribute="leadingMargin" constant="20" id="eUr-tK-Rpe"/>
+                            <constraint firstItem="Gl6-9K-tJc" firstAttribute="top" secondItem="ZIL-om-Dma" secondAttribute="topMargin" constant="20" id="qvJ-LZ-MCu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gl6-9K-tJc" secondAttribute="trailing" constant="20" id="rGm-8d-N04"/>
+                            <constraint firstAttribute="centerX" secondItem="Gl6-9K-tJc" secondAttribute="centerX" id="u2O-ng-jB6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GDM-4J-4xL"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gl6-9K-tJc" id="6xx-sX-dZn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MwD-P4-ePM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-817" y="-1116"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="puppy1.jpg" width="190" height="142"/>
+    </resources>
 </document>
